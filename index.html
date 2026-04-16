@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Once Upon a Time｜安東27屆社慶</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --royal-blue: #0A1628;
+    --navy: #061020;
+    --gold: #C9973A;
+    --gold-bright: #F0C060;
+    --gold-pale: #F7E8C0;
+    --gold-shimmer: #FFE9A0;
+    --silver: #C8D8E8;
+    --cream: #FDF8EE;
+    --parchment: #F5EDD8;
+    --ink: #1A1008;
+    --ruby: #8B1A2A;
+    --sapphire: #1A3A6B;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–navy);
+font-family: ‘Noto Serif TC’, serif;
+min-height: 100vh;
+overflow-x: hidden;
+cursor: default;
+}
+
+/* ── MAGICAL BACKGROUND ── */
+.bg-magic {
+position: fixed; inset: 0; z-index: 0;
+background:
+radial-gradient(ellipse 80% 60% at 50% 0%, rgba(20,40,100,0.8) 0%, transparent 70%),
+radial-gradient(ellipse 60% 40% at 10% 80%, rgba(80,20,40,0.5) 0%, transparent 60%),
+radial-gradient(ellipse 50% 50% at 90% 70%, rgba(20,60,100,0.4) 0%, transparent 60%),
+linear-gradient(180deg, #06101e 0%, #0a1628 50%, #06101e 100%);
+}
+
+/* Floating sparkles */
+.sparkles {
+position: fixed; inset: 0; z-index: 0; pointer-events: none;
+overflow: hidden;
+}
+.sparkle {
+position: absolute;
+width: 3px; height: 3px;
+background: var(–gold-shimmer);
+border-radius: 50%;
+animation: floatUp linear infinite;
+opacity: 0;
+}
+@keyframes floatUp {
+0%   { opacity: 0; transform: translateY(0) scale(0); }
+10%  { opacity: 1; transform: translateY(-10px) scale(1); }
+90%  { opacity: 0.6; }
+100% { opacity: 0; transform: translateY(-120px) scale(0.3); }
+}
+
+/* ── PAGE LAYOUT ── */
+.page {
+position: relative; z-index: 1;
+max-width: 860px;
+margin: 0 auto;
+padding: 0 20px 100px;
+}
+
+/* ── HERO CREST ── */
+.hero {
+text-align: center;
+padding: 60px 20px 20px;
+}
+
+.crest-svg {
+width: 120px; height: 120px;
+margin: 0 auto 24px;
+filter: drop-shadow(0 0 20px rgba(201,151,58,0.6));
+animation: crестGlow 3s ease-in-out infinite alternate;
+}
+@keyframes crестGlow {
+from { filter: drop-shadow(0 0 15px rgba(201,151,58,0.5)); }
+to   { filter: drop-shadow(0 0 35px rgba(240,192,96,0.9)); }
+}
+
+.hero-eyebrow {
+font-family: ‘Cinzel’, serif;
+font-size: 11px;
+letter-spacing: 8px;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 16px;
+animation: fadeDown 1s 0.2s both;
+}
+
+.hero-title {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(28px, 6vw, 52px);
+font-weight: 900;
+line-height: 1.1;
+background: linear-gradient(180deg, #FFE9A0 0%, #C9973A 40%, #F0C060 70%, #8B6010 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin-bottom: 8px;
+text-shadow: none;
+animation: fadeDown 1s 0.3s both;
+}
+
+.hero-sub {
+font-family: ‘Cinzel’, serif;
+font-size: clamp(13px, 2.5vw, 18px);
+color: var(–silver);
+letter-spacing: 4px;
+margin-bottom: 20px;
+animation: fadeDown 1s 0.4s both;
+}
+
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-16px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ornamental divider */
+.orn-divider {
+display: flex; align-items: center; justify-content: center;
+gap: 12px; margin: 20px 0;
+animation: fadeDown 1s 0.5s both;
+}
+.orn-line {
+flex: 1; max-width: 160px; height: 1px;
+background: linear-gradient(90deg, transparent, var(–gold), transparent);
+}
+.orn-center {
+font-size: 20px; color: var(–gold-bright);
+text-shadow: 0 0 12px var(–gold);
+}
+
+/* ── SCROLL CONTAINER ── */
+.scroll-outer {
+position: relative;
+margin: 40px 0;
+}
+
+/* Scroll rod top */
+.scroll-rod {
+position: relative;
+height: 28px;
+display: flex; align-items: center; justify-content: center;
+z-index: 3;
+}
+.rod-bar {
+width: calc(100% - 60px);
+height: 14px;
+border-radius: 7px;
+background: linear-gradient(180deg, #C9973A 0%, #7A5010 40%, #C9973A 70%, #F0C060 85%, #8B6010 100%);
+box-shadow: 0 4px 16px rgba(0,0,0,0.6), 0 0 20px rgba(201,151,58,0.3);
+position: relative;
+}
+.rod-knob {
+position: absolute;
+width: 28px; height: 28px;
+border-radius: 50%;
+background: radial-gradient(circle at 35% 35%, #FFE9A0, #C9973A 50%, #7A5010);
+box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 16px rgba(201,151,58,0.4);
+top: 50%; transform: translateY(-50%);
+}
+.rod-knob.left  { left: 0; }
+.rod-knob.right { right: 0; }
+
+/* Parchment scroll body */
+.scroll-body {
+background:
+linear-gradient(180deg,
+rgba(200,160,80,0.15) 0%,
+transparent 8%,
+transparent 92%,
+rgba(200,160,80,0.15) 100%),
+radial-gradient(ellipse at 50% 0%, rgba(245,237,216,0.97) 0%, rgba(240,228,200,0.97) 100%);
+border-left:  2px solid rgba(180,130,50,0.4);
+border-right: 2px solid rgba(180,130,50,0.4);
+padding: 40px 48px;
+position: relative;
+overflow: hidden;
+}
+
+/* Parchment texture overlay */
+.scroll-body::before {
+content: ‘’;
+position: absolute; inset: 0; pointer-events: none;
+background-image:
+repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(180,130,50,0.04) 28px, rgba(180,130,50,0.04) 29px);
+z-index: 0;
+}
+
+/* Inner border */
+.scroll-body::after {
+content: ‘’;
+position: absolute;
+inset: 16px;
+border: 1px solid rgba(180,130,50,0.25);
+pointer-events: none;
+z-index: 0;
+}
+
+.scroll-content {
+position: relative; z-index: 1;
+}
+
+/* Scroll title inside */
+.scroll-heading {
+text-align: center;
+margin-bottom: 32px;
+}
+.scroll-heading-top {
+font-family: ‘Cinzel’, serif;
+font-size: 11px;
+letter-spacing: 6px;
+color: var(–ruby);
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+.scroll-heading-main {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(18px, 4vw, 28px);
+font-weight: 700;
+color: var(–ink);
+line-height: 1.3;
+}
+.scroll-heading-main span {
+color: var(–ruby);
+}
+
+.scroll-orn {
+display: flex; align-items: center; justify-content: center;
+gap: 10px; margin: 16px 0 28px;
+}
+.scroll-orn-line {
+flex: 1; max-width: 100px; height: 1px;
+background: linear-gradient(90deg, transparent, rgba(180,130,50,0.5), transparent);
+}
+.scroll-orn-sym { font-size: 14px; color: var(–gold); }
+
+/* ── ACT ROWS ── */
+.act-row {
+display: grid;
+grid-template-columns: 64px 1fr;
+gap: 0;
+margin-bottom: 0;
+border-bottom: 1px solid rgba(180,130,50,0.18);
+padding: 20px 0;
+opacity: 0;
+transform: translateY(12px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+position: relative;
+}
+.act-row.in-view {
+opacity: 1; transform: translateY(0);
+}
+.act-row:last-child { border-bottom: none; }
+
+.act-num-col {
+display: flex; flex-direction: column;
+align-items: center; padding-top: 4px;
+}
+.act-roman {
+font-family: ‘Cinzel’, serif;
+font-size: 8px;
+letter-spacing: 1px;
+color: var(–ruby);
+margin-bottom: 4px;
+text-align: center;
+}
+.act-icon-circle {
+width: 42px; height: 42px;
+border-radius: 50%;
+background: linear-gradient(135deg, rgba(201,151,58,0.2), rgba(201,151,58,0.05));
+border: 1.5px solid rgba(180,130,50,0.4);
+display: flex; align-items: center; justify-content: center;
+}
+.act-connector {
+width: 1px; flex: 1; min-height: 20px;
+background: linear-gradient(180deg, rgba(180,130,50,0.3), transparent);
+margin-top: 6px;
+}
+
+.act-text-col {
+padding-left: 16px;
+}
+.act-label {
+font-family: ‘Cinzel’, serif;
+font-size: 10px;
+letter-spacing: 4px;
+color: rgba(100,60,20,0.6);
+text-transform: uppercase;
+margin-bottom: 4px;
+}
+.act-title-scroll {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(14px, 2.8vw, 19px);
+font-weight: 700;
+color: var(–ink);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+.act-title-scroll em {
+font-style: normal;
+color: var(–ruby);
+}
+.act-desc-scroll {
+font-size: 13px;
+color: rgba(30,15,5,0.7);
+line-height: 1.9;
+font-family: ‘IM Fell English’, serif;
+font-style: italic;
+margin-bottom: 8px;
+}
+.act-tags-scroll {
+display: flex; gap: 6px; flex-wrap: wrap;
+}
+.atag {
+font-family: ‘Cinzel’, serif;
+font-size: 9px;
+letter-spacing: 1.5px;
+padding: 3px 8px;
+border: 1px solid rgba(180,130,50,0.35);
+color: rgba(100,60,20,0.7);
+border-radius: 1px;
+}
+
+/* Finale special */
+.act-row.finale {
+background: linear-gradient(135deg, rgba(139,26,42,0.06), transparent);
+border-radius: 2px;
+padding: 24px 8px;
+}
+.finale .act-title-scroll { color: var(–ruby); }
+
+/* ── BOTTOM ROD ── */
+.scroll-bottom-curl {
+height: 28px;
+background:
+linear-gradient(180deg, rgba(200,160,80,0.15), transparent),
+radial-gradient(ellipse at 50% 100%, rgba(240,228,200,0.97), rgba(220,200,160,0.9));
+border-left:  2px solid rgba(180,130,50,0.4);
+border-right: 2px solid rgba(180,130,50,0.4);
+border-bottom: 2px solid rgba(180,130,50,0.3);
+border-radius: 0 0 40% 40% / 0 0 20px 20px;
+position: relative;
+}
+
+/* ── MAGIC DUST FOOTER ── */
+.footer-section {
+text-align: center;
+padding: 48px 0 24px;
+animation: fadeDown 1s 0.8s both;
+}
+.footer-title {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 16px;
+background: linear-gradient(135deg, #FFE9A0, #C9973A);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin-bottom: 6px;
+}
+.footer-sub {
+font-family: ‘Cinzel’, serif;
+font-size: 10px;
+letter-spacing: 5px;
+color: rgba(201,151,58,0.5);
+text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+.scroll-body { padding: 28px 20px; }
+.act-row { grid-template-columns: 52px 1fr; }
+.act-icon-circle { width: 36px; height: 36px; font-size: 16px; }
+}
+</style>
+
+</head>
+<body>
+<div class="bg-magic"></div>
+<div class="sparkles" id="sparkles"></div>
+
+<div class="page">
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <!-- SVG Crest -->
+    <svg class="crest-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFE9A0"/>
+          <stop offset="40%" stop-color="#C9973A"/>
+          <stop offset="80%" stop-color="#F0C060"/>
+          <stop offset="100%" stop-color="#8B6010"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- Shield -->
+      <path d="M60 8 L100 24 L100 68 Q100 96 60 112 Q20 96 20 68 L20 24 Z"
+            fill="none" stroke="url(#gGold)" stroke-width="2" filter="url(#glow)"/>
+      <!-- Inner shield -->
+      <path d="M60 18 L92 31 L92 66 Q92 88 60 102 Q28 88 28 66 L28 31 Z"
+            fill="rgba(201,151,58,0.06)" stroke="url(#gGold)" stroke-width="1" opacity="0.6"/>
+      <!-- Crown top -->
+      <path d="M44 20 L44 10 L52 16 L60 8 L68 16 L76 10 L76 20"
+            fill="none" stroke="url(#gGold)" stroke-width="2" stroke-linejoin="round"/>
+      <!-- Stars -->
+      <text x="60" y="68" text-anchor="middle" font-size="28" fill="url(#gGold)" filter="url(#glow)">✦</text>
+      <!-- Bottom flourish -->
+      <path d="M40 95 Q60 105 80 95" fill="none" stroke="url(#gGold)" stroke-width="1.5" opacity="0.7"/>
+    </svg>
+
+```
+<div class="hero-eyebrow">Rotary Club of Antung · The 27th Anniversary</div>
+<h1 class="hero-title">Once Upon<br>a Time</h1>
+<div class="hero-sub">安東扶輪社 二十七屆社慶</div>
+
+<div class="orn-divider">
+  <div class="orn-line"></div>
+  <div class="orn-center">✦ ✧ ✦</div>
+  <div class="orn-line"></div>
+</div>
+
+<div style="font-family:'IM Fell English',serif; font-style:italic; color:var(--silver); font-size:15px; line-height:2.2; max-width:560px; margin:0 auto; opacity:0.85; animation: fadeDown 1s 0.6s both;">
+  從前從前，在一個星光燦爛的夜晚，<br>
+  宮廷的大門緩緩開啟，故事就此展開。<br>
+  公主們盛裝而來，反派伺機而動，<br>
+  草原的鼓聲、城市的節拍、冰雪的魔法<br>
+  在這一夜，一一化為現實。<br>
+  <span style="color:var(--gold-pale); font-size:13px; letter-spacing:1px;">六個篇章，一場只屬於安東的童話。</span>
+</div>
+```
+
+  </div>
+
+  <!-- SCROLL -->
+
+  <div class="scroll-outer">
+    <!-- Top rod -->
+    <div class="scroll-rod">
+      <div class="rod-bar">
+        <div class="rod-knob left"></div>
+        <div class="rod-knob right"></div>
+      </div>
+    </div>
+
+```
+<!-- Scroll body -->
+<div class="scroll-body">
+  <div class="scroll-content">
+
+    <div class="scroll-heading">
+      <div class="scroll-heading-top">Programme of the Evening</div>
+      <div class="scroll-heading-main"><span>Once Upon a Time</span></div>
+    </div>
+    <div class="scroll-orn">
+      <div class="scroll-orn-line"></div>
+      <span class="scroll-orn-sym">⚜</span>
+      <div class="scroll-orn-line"></div>
+    </div>
+
+    <!-- CHAPTER I -->
+    <div class="act-row">
+      <div class="act-num-col">
+        <div class="act-roman">Chapter I</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L13.8 7.4H19.5L14.9 10.6L16.7 16L12 12.8L7.3 16L9.1 10.6L4.5 7.4H10.2L12 2Z" stroke="rgba(180,130,50,0.9)" stroke-width="1.2" fill="rgba(201,151,58,0.15)"/>
+            <path d="M12 6L13 9H16L13.5 10.8L14.5 13.8L12 12L9.5 13.8L10.5 10.8L8 9H11L12 6Z" fill="rgba(201,151,58,0.3)"/>
+          </svg>
+        </div>
+        <div class="act-connector"></div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">Disney Princesses</div>
+        <div class="act-title-scroll">女社友 × 寶眷<em>公主走秀</em></div>
+        <div class="act-desc-scroll">
+          幕布拉開，燈光如月光般傾瀉而下。一位又一位的公主，踏著屬於她們的主題旋律緩緩走來——每一步，都是一個童話的開場。樂團現場演奏，讓這一夜的魔法，從她們的裙擺間流淌而出。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">導演：地瓜</span>
+          <span class="atag">現場樂團伴奏</span>
+          <span class="atag">走秀 Pose</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER II -->
+    <div class="act-row">
+      <div class="act-num-col">
+        <div class="act-roman">Chapter II</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3C9 3 7 5 7 7C7 9 8 10 9 11L7 21H17L15 11C16 10 17 9 17 7C17 5 15 3 12 3Z" stroke="rgba(180,130,50,0.8)" stroke-width="1.2" fill="rgba(201,151,58,0.1)"/>
+            <path d="M10 7.5C10 6.7 10.9 6 12 6C13.1 6 14 6.7 14 7.5" stroke="rgba(180,130,50,0.6)" stroke-width="1" fill="none"/>
+            <circle cx="12" cy="5" r="1.2" fill="rgba(201,151,58,0.6)"/>
+            <path d="M9.5 13H14.5M9 15.5H15M9.5 18H14.5" stroke="rgba(180,130,50,0.4)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="act-connector"></div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">Disney Villains</div>
+        <div class="act-title-scroll">男社友 × 先生們<em>反派大亂鬥</em></div>
+        <div class="act-desc-scroll">
+          正當公主們沉浸在榮耀之中，黑暗的身影從舞台側翼悄然現身。反派們帶著壞笑登場，演戲、獻唱，試圖攪亂這個美麗的夜晚——只是，愛，終究是任何詛咒都無法打敗的力量。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">導演：Jason</span>
+          <span class="atag">演戲小品</span>
+          <span class="atag">搭配歌唱</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER III -->
+    <div class="act-row">
+      <div class="act-num-col">
+        <div class="act-roman">Chapter III</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 4C10 4 8 5.5 8 7.5C8 9 9 10 10 10.5L8 14H16L14 10.5C15 10 16 9 16 7.5C16 5.5 14 4 12 4Z" stroke="rgba(180,130,50,0.8)" stroke-width="1.1" fill="rgba(201,151,58,0.08)"/>
+            <path d="M6 18C6 15.8 8.7 14 12 14C15.3 14 18 15.8 18 18" stroke="rgba(180,130,50,0.7)" stroke-width="1.2" fill="none"/>
+            <path d="M4 12C4 12 6 10 8 11M20 12C20 12 18 10 16 11" stroke="rgba(180,130,50,0.5)" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+        <div class="act-connector"></div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">The Lion King</div>
+        <div class="act-title-scroll">地瓜 × 舞團<em>獅子王 Samba</em></div>
+        <div class="act-desc-scroll">
+          鼓聲從遠方滾滾而來，大地開始震動。地瓜率領舞團，化身非洲草原的子民，將 Circle of Life 的壯闊旋律化為Samba的熾熱律動。那是生命的頌歌，也是屬於安東的狂歡。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">主演：地瓜 + 舞團</span>
+          <span class="atag">Samba 舞蹈</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER IV -->
+    <div class="act-row">
+      <div class="act-num-col">
+        <div class="act-roman">Chapter IV</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="13" rx="6" ry="4" stroke="rgba(180,130,50,0.8)" stroke-width="1.2" fill="rgba(201,151,58,0.08)"/>
+            <path d="M8 13V10C8 8.3 9.8 7 12 7C14.2 7 16 8.3 16 10V13" stroke="rgba(180,130,50,0.7)" stroke-width="1.1" fill="none"/>
+            <path d="M6 11C5 11 4 11.9 4 13C4 14.1 5 15 6 15" stroke="rgba(180,130,50,0.5)" stroke-width="1" fill="none"/>
+            <path d="M18 11C19 11 20 11.9 20 13C20 14.1 19 15 18 15" stroke="rgba(180,130,50,0.5)" stroke-width="1" fill="none"/>
+            <circle cx="12" cy="6" r="1.5" fill="rgba(201,151,58,0.5)"/>
+            <path d="M10 17L10.5 20M14 17L13.5 20" stroke="rgba(180,130,50,0.4)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="act-connector"></div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">Zootopia</div>
+        <div class="act-title-scroll">舞團<em>動物方城市熱舞</em></div>
+        <div class="act-desc-scroll">
+          這座城市，從不設限。各式各樣的動物居民蜂擁而上，隨著 Shakira 的《Try Everything》盡情舞動——那是一首寫給所有人的歌，關於勇氣、關於嘗試、關於永不放棄。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">主演：舞團</span>
+          <span class="atag">Try Everything</span>
+          <span class="atag">動物造型</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER V -->
+    <div class="act-row">
+      <div class="act-num-col">
+        <div class="act-roman">Chapter V</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3L14 8L19.5 8L15.2 11.5L17 17L12 13.5L7 17L8.8 11.5L4.5 8L10 8L12 3Z" stroke="rgba(180,130,50,0.8)" stroke-width="1.1" fill="rgba(201,151,58,0.08)"/>
+            <path d="M9 9.5C10 8 11 7.5 12 7.5M15 9.5C14 8 13 7.5 12 7.5" stroke="rgba(180,130,50,0.4)" stroke-width="0.8" fill="none"/>
+            <circle cx="7" cy="5" r="1" fill="rgba(180,130,50,0.4)"/>
+            <circle cx="17" cy="5" r="1" fill="rgba(180,130,50,0.4)"/>
+            <circle cx="12" cy="3" r="0.8" fill="rgba(201,151,58,0.6)"/>
+          </svg>
+        </div>
+        <div class="act-connector"></div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">Frozen</div>
+        <div class="act-title-scroll"><em>P. 查理</em> Elsa ✦ <em>PE Simon</em> Anna</div>
+        <div class="act-desc-scroll">
+          寒風乍起，舞台在一瞬間化為冰雪王國。P. 查理一襲冰藍禮服，凜然而至；PE Simon 以 Anna 的身份甜笑登場。兩人用歌聲與動作，重現那段關於姐妹、關於愛，以及「Let It Go」的傳奇時刻。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">P. 查理（Elsa）</span>
+          <span class="atag">PE Simon（Anna）</span>
+          <span class="atag">冰雪特效</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINALE -->
+    <div class="act-row finale">
+      <div class="act-num-col">
+        <div class="act-roman">Finale</div>
+        <div class="act-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 4V14M12 4L9 7M12 4L15 7" stroke="rgba(180,130,50,0.9)" stroke-width="1.3" stroke-linecap="round"/>
+            <rect x="7" y="14" width="10" height="3" rx="1" stroke="rgba(180,130,50,0.8)" stroke-width="1.1" fill="rgba(201,151,58,0.12)"/>
+            <path d="M5 20H19" stroke="rgba(180,130,50,0.6)" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M4 17H6M18 17H20" stroke="rgba(180,130,50,0.4)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="act-text-col">
+        <div class="act-label">Grand Finale · 壓軸</div>
+        <div class="act-title-scroll">三分區社長們<em>好膽你就來</em></div>
+        <div class="act-desc-scroll">
+          所有的童話，終究要走向最精彩的那一頁。三分區社長們齊步登台，以無所畏懼的姿態，唱出這個夜晚最後也最響亮的宣言。全場沸騰，掌聲如雷——這，就是安東二十七年的底氣。
+        </div>
+        <div class="act-tags-scroll">
+          <span class="atag">三分區全體社長</span>
+          <span class="atag">全場合唱</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-orn" style="margin-top:28px; margin-bottom:0;">
+      <div class="scroll-orn-line"></div>
+      <span class="scroll-orn-sym" style="font-size:18px;">✦</span>
+      <div class="scroll-orn-line"></div>
+    </div>
+
+  </div><!-- scroll-content -->
+</div><!-- scroll-body -->
+
+<!-- Bottom curl -->
+<div class="scroll-bottom-curl"></div>
+<!-- Bottom rod -->
+<div class="scroll-rod">
+  <div class="rod-bar">
+    <div class="rod-knob left"></div>
+    <div class="rod-knob right"></div>
+  </div>
+</div>
+```
+
+  </div><!-- scroll-outer -->
+
+  <!-- FOOTER -->
+
+  <div class="footer-section">
+    <div class="footer-title">Once Upon a Time ✦ 安東二十七屆</div>
+    <div class="footer-sub">Rotary Club of Antung · 27th Anniversary · 2026</div>
+  </div>
+
+</div><!-- page -->
+
+<script>
+  // Sparkles
+  const container = document.getElementById('sparkles');
+  for (let i = 0; i < 30; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.cssText = `
+      left: ${Math.random()*100}%;
+      bottom: ${Math.random()*30}%;
+      width: ${Math.random()*3+1}px;
+      height: ${Math.random()*3+1}px;
+      animation-duration: ${Math.random()*6+4}s;
+      animation-delay: ${Math.random()*8}s;
+    `;
+    container.appendChild(s);
+  }
+
+  // Scroll-triggered act rows
+  const rows = document.querySelectorAll('.act-row');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in-view'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  rows.forEach(r => obs.observe(r));
+</script>
+
+</body>
+</html>
